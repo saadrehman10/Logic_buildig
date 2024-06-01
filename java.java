@@ -1,3 +1,3 @@
-static void main(){
-    System.out.println('hello wrold');
-}
+// static void main(){
+//     System.out.println('hello wrold');
+// }
