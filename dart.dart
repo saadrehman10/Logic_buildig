@@ -1,3 +1,5 @@
+import 'dart:io';
+
 String ReverseString(String value) {
   List<String> temp = [];
   List<String> output = [];
@@ -16,6 +18,17 @@ String ReverseString(String value) {
   return tempStr;
 }
 
+dynamic input(String type, [String? text]) {
+  print(text ?? "Input something...");
+  try {
+    return type == 'i'
+        ? int.parse(stdin.readLineSync()!)
+        : stdin.readLineSync()!;
+  } catch (e) {
+    print('Invalid input');
+  }
+}
+
 void main() {
   // int x = 11211;
   // print(
@@ -31,10 +44,13 @@ void main() {
   //     print('hellod');
   // }
   // print(ReverseString('value'));
-  var s = 'hello'.split('');
+  // var s = 'hello'.split('');
   // for (int i = s.length - 1; i >= 0; i--) {
   //   String output = s.removeAt(i);
   //   s.insert(0, output);
   // }
-  print(s.reversed);
+  // print(s.reversed);
+
+  List<String> array = 'aeiou'.split('');
+  for (String? value in array) {}
 }
