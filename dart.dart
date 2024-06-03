@@ -52,7 +52,5 @@ void main() {
   // print(s.reversed);
   var userInput = input('s', 'Enter an letter: ');
   List<String> array = 'aeiou'.split('');
-  for (String? value in array) {
-    value == userInput ? print('is a vowle') : print('is not a vowle');
-  }
+  array.contains(userInput) ? print('amir cutiya') : print('const');
 }
