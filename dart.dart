@@ -50,7 +50,9 @@ void main() {
   //   s.insert(0, output);
   // }
   // print(s.reversed);
-
+  var userInput = input('s', 'Enter an letter: ');
   List<String> array = 'aeiou'.split('');
-  for (String? value in array) {}
+  for (String? value in array) {
+    value == userInput ? print('is a vowle') : print('is not a vowle');
+  }
 }
