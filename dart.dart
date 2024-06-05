@@ -29,28 +29,16 @@ dynamic input(String type, [String? text]) {
   }
 }
 
+List<String> commonChars(List<String> words) {
+  List<String> output = [];
+  String joinedWords = words.join();
+  Map<String, int> occurance = {};
+  words[0].split('').forEach((index) => occurance[index] = 0);
+  print(occurance);
+  return output;
+}
+
 void main() {
-  // int x = 11211;
-  // print(
-  //     x.toString().split('').reversed.join('') == x.toString() ? true : false);
-  // List<String> array = x.toString().split('');
-  // var temp = [1];
-  // var a = temp[0];
-  // switch(a) {
-  //   case 0:
-  //     print('hello')
-  //     break;
-  //   default:
-  //     print('hellod');
-  // }
-  // print(ReverseString('value'));
-  // var s = 'hello'.split('');
-  // for (int i = s.length - 1; i >= 0; i--) {
-  //   String output = s.removeAt(i);
-  //   s.insert(0, output);
-  // }
-  // print(s.reversed);
-  var userInput = input('s', 'Enter an letter: ');
-  List<String> array = 'aeiou'.split('');
-  array.contains(userInput) ? print('amir cutiya') : print('const');
+  var array = ["bella", "label", "roller"];
+  commonChars(array);
 }
