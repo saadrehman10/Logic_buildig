@@ -55,6 +55,16 @@ List<String> commonChars(List<String> words) {
 }
 
 void main() {
+  var array2 = [
+    "acabcddd",
+    "bcbdbcbd",
+    "baddbadb",
+    "cbdddcac",
+    "aacbcccd",
+    "ccccddda",
+    "cababaab",
+    "addcaccd"
+  ];
   var array1 = ["cool", "lock", "cook"];
   var array = ["bella", "label", "roller"];
   print(commonChars(array1));
