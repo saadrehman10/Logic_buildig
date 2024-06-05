@@ -31,6 +31,8 @@ dynamic input(String type, [String? text]) {
 
 List<String> commonChars(List<String> words) {
   List<String> output = [];
+  
+
   String joinedWords = words.join();
   Map<String, int> occurance = {};
   words[0].split('').forEach((index) => occurance[index] = 0);
@@ -53,6 +55,43 @@ List<String> commonChars(List<String> words) {
   print(occurance);
   return output;
 }
+
+import 'dart:math'; // Import the math library
+
+class Solution {
+  List<String> commonChars(List<String> words) {
+    Map<String, int> charFrequency = {};
+    List<String> output = [];
+
+    words[0].split('').forEach((char) {
+      charFrequency[char] = (charFrequency[char] ?? 0) + 1;
+    });
+
+    for (var word in words.skip(1)) {
+      Map<String, int> wordFrequency = {};
+      word.split('').forEach((char) {
+        wordFrequency[char] = (wordFrequency[char] ?? 0) + 1;
+      });
+
+      charFrequency.keys.toList().forEach((char) {
+        if (wordFrequency.containsKey(char)) {
+          charFrequency[char] = min(charFrequency[char]!, wordFrequency[char]!);
+        } else {
+          charFrequency[char] = 0;
+        }
+      });
+    }
+
+    charFrequency.forEach((char, frequency) {
+      for (int i = 0; i < frequency; i++) {
+        output.add(char);
+      }
+    });
+
+    return output;
+  }
+}
+
 
 void main() {
   var array2 = [
