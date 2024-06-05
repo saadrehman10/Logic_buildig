@@ -34,11 +34,28 @@ List<String> commonChars(List<String> words) {
   String joinedWords = words.join();
   Map<String, int> occurance = {};
   words[0].split('').forEach((index) => occurance[index] = 0);
+  for (int i = 0; i < joinedWords.length; i++) {
+    if (occurance.keys.contains(joinedWords[i])) {
+      occurance[joinedWords[i]] = occurance[joinedWords[i]]! + 1;
+    }
+  }
+  occurance.removeWhere((key, value) => value < words.length);
+  occurance.forEach((key, value) {
+    if (value % words.length == 0) {
+      int temp = value ~/ words.length;
+      for (int i = 0; i < temp; i++) {
+        output.add(key);
+      }
+    } else {
+      output.add(key);
+    }
+  });
   print(occurance);
   return output;
 }
 
 void main() {
+  var array1 = ["cool", "lock", "cook"];
   var array = ["bella", "label", "roller"];
-  commonChars(array);
+  print(commonChars(array1));
 }
