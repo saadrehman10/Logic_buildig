@@ -96,7 +96,8 @@ bool isValid(String s) {
   int pointerTwo = 1;
   bool output = false;
   while (pointerOne < s.length) {
-    if (pointerTwo >= s.length - 1) {
+    if (pointerTwo > s.length - 1) {
+      print("here end of array");
       break;
     } else if (s[pointerOne] == s[pointerTwo]) {
       output = true;
@@ -113,5 +114,4 @@ void main() {
   var s1 = "{)()[]";
   print(isValid(s));
   print(isValid(s1));
-
 }
