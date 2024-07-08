@@ -22,4 +22,7 @@ void main() {
   print(a ?? 0);
   print(b ?? 0);
   print(a ?? b);
+
+  late int amir ; 
+
 }
